@@ -1,0 +1,29 @@
+
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="amazon-logo-title">
+  
+  <title id="amazon-logo-title">Amazon Logo</title>
+  
+  <!-- The word "amazon" -->
+  <!-- The font-family starts with Amazon's official font "Amazon Ember" and provides common sans-serif fallbacks. -->
+  <text 
+    x="10" 
+    y="80" 
+    font-family="Amazon Ember, Arial, sans-serif" 
+    font-size="72" 
+    font-weight="700" 
+    fill="#232F3E">
+    amazon
+  </text>
+  
+  <!-- The "smile" arrow from 'a' to 'z' -->
+  <!-- This is a single, filled path for a crisp and scalable result. -->
+  <path 
+    d="M 75 82 
+       C 150 125, 250 125, 325 87 
+       L 355 94 
+       L 325 101 
+       C 250 140, 150 140, 75 96 Z"
+    fill="#FF9900"
+  />
+
+</svg>
