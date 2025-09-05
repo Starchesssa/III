@@ -18,6 +18,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: ⚡ Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2 libcairo2-dev \
+            libpango1.0-0 libpango1.0-dev \
+            ffmpeg \
+            libjpeg-dev \
+            libgif-dev \
+            libgl1-mesa-glx \
+            texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended \
+            texlive-xetex
+          
       - name: ⚡ Install Manim
         run: |
           python -m pip install --upgrade pip
