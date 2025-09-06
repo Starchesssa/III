@@ -19,37 +19,28 @@ class AmazonInvention(MovingCameraScene):
         failures = boxes[:9]
         success = boxes[9]
         
-        crosses = VGroup()
-        for box in failures:
-            cross = Cross(box, stroke_color=RED, stroke_width=8)
-            crosses.add(cross)
-        
         self.play(
             *[box.animate.set_fill(RED, opacity=0.5) for box in failures],
-            Create(crosses),
             run_time=1.5
         )
         self.wait(0.5)
         
-        check = Checkmark(success, color=GREEN, stroke_width=8)
         self.play(
             success.animate.set_fill(GREEN, opacity=0.5),
-            Create(check)
         )
         self.wait(0.5)
 
         reward_text = Text("100x Reward", font_size=48, color=YELLOW).next_to(success, DOWN, buff=1)
         self.play(
-            FadeOut(*failures, *crosses),
+            FadeOut(*failures),
             self.camera.frame.animate.move_to(success.get_center()).scale(0.7),
             success.animate.scale(2),
-            check.animate.scale(2),
             Write(reward_text)
         )
         self.wait(1)
 
         # 00:09 - 00:15
-        self.play(FadeOut(success, check, reward_text))
+        self.play(FadeOut(success, reward_text))
         amazon_logo = SVGMobject("images/amazon_logo.svg").scale(0.5)
         philosophy_text = Text("Amazon's Philosophy:", font_size=36).next_to(amazon_logo, UP)
         fail_text = Text("You must fail to invent.", font_size=40, color=YELLOW).next_to(amazon_logo, DOWN)
