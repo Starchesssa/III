@@ -1,7 +1,6 @@
 
 from manim import *
-from manim.mobject.geometry.indicators 
-import Checkmark, Cross
+from manim.mobject.geometry.indicators import Checkmark, Cross
 
 class AmazonInvention(MovingCameraScene):
     def construct(self):
