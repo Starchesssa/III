@@ -1,6 +1,5 @@
 
 from manim import *
-from manim.mobject.geometry import Checkmark, Cross
 
 class AmazonInvention(MovingCameraScene):
     def construct(self):
