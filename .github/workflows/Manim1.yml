@@ -35,6 +35,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U manim
 
+      - name: 📝 Check Manim Version
+        run: |
+          python -c "import manim; print('Manim version:', manim.__version__)"
+
       - name: 📁 Ensure images folder exists
         run: |
           if [ ! -d "images" ]; then
