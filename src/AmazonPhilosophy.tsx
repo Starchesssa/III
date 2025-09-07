@@ -7,7 +7,7 @@ import {FirePhoneScene} from './FirePhoneScene';
 import {EchoScene} from './EchoScene';
 
 // Import the audio file
-import audio from '../public/audio.mp3';
+import audio from '../public/audio.wav';
 
 const Fg = {color: '#F1F1F1'};
 
