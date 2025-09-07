@@ -14,10 +14,13 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm install
+      # Install dependencies with legacy-peer-deps to fix React version conflicts
+      - run: npm install --legacy-peer-deps
 
+      # Render your video
       - run: npx remotion render src/Video.tsx out/video.mp4 --codec=h264
 
+      # Upload artifact
       - uses: actions/upload-artifact@v4
         with:
           name: remotion-video
