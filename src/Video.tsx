@@ -9,7 +9,7 @@ import {Scene5} from './scenes/Scene5';
 import {Scene6} from './scenes/Scene6';
 import {Scene7} from './scenes/Scene7';
 
-import audio from '../public/audio.mp3';
+import audio from '../public/audio.wav';
 
 const FPS = 30;
 const DURATION_IN_SECONDS = 69;
