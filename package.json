@@ -1,0 +1,13 @@
+
+{
+  "name": "motion-canvas-video",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "motion-canvas dev",
+    "render": "motion-canvas render src/amazon.tsx --output output/amazon.mp4"
+  },
+  "dependencies": {
+    "@motion-canvas/2d": "^3.12.0",
+    "@motion-canvas/core": "^3.12.0"
+  }
+}
