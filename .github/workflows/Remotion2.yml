@@ -8,7 +8,7 @@ jobs:
   render:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repo
       - uses: actions/checkout@v4
 
       # 2️⃣ Setup Node.js
@@ -17,18 +17,13 @@ jobs:
           node-version: 18
 
       # 3️⃣ Install dependencies
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+      - run: npm install --legacy-peer-deps
 
-      # 4️⃣ Render the video (entry must be the file with registerRoot)
-      - name: Render Video
-        run: |
-          mkdir -p out
-          npx remotion render src/index.tsx Amazon-Failure-To-Success out/video.mp4 --codec=h264 --overwrite
+      # 4️⃣ Render video with correct composition ID
+      - run: npx remotion render src/index.tsx AmazonFailure out/video.mp4 --codec=h264
 
-      # 5️⃣ Upload video as artifact
-      - name: Upload Video Artifact
-        uses: actions/upload-artifact@v4
+      # 5️⃣ Upload artifact
+      - uses: actions/upload-artifact@v4
         with:
           name: remotion-video
           path: out/video.mp4
