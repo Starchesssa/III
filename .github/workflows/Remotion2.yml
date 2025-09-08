@@ -1,3 +1,4 @@
+
 name: Render Remotion Video
 
 on:
@@ -19,11 +20,11 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # 4️⃣ Render the video
+      # 4️⃣ Render the video (entry must be the file with registerRoot)
       - name: Render Video
         run: |
           mkdir -p out
-          npx remotion render src/Video.tsx Amazon-Failure-To-Success out/video.mp4 --codec=h264 --overwrite
+          npx remotion render src/index.tsx Amazon-Failure-To-Success out/video.mp4 --codec=h264 --overwrite
 
       # 5️⃣ Upload video as artifact
       - name: Upload Video Artifact
