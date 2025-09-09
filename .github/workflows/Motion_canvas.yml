@@ -1,35 +1,36 @@
-
-name: Motion Canvas Headless Render
+name: Headless Motion Canvas Render
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Run manually
+  push:
+    branches: [main]
 
 jobs:
   render:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    # 1. Checkout the repo
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      # 2. Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+    # 2. Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
 
-      # 3. Install dependencies (use install instead of ci)
-      - name: Install dependencies
-        run: npm install
+    # 3. Install dependencies
+    - name: Install dependencies
+      run: npm install
 
-      # 4. Render Motion Canvas project headlessly
-      - name: Render Motion Canvas
-        run: npm run render
+    # 4. Run headless render
+    - name: Render Motion Canvas Project
+      run: npm run render
 
-      # 5. Upload rendered video as artifact
-      - name: Upload video artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: motion-canvas-video
-          path: public/video.mp4
+    # 5. Upload output video as artifact
+    - name: Upload rendered video
+      uses: actions/upload-artifact@v3
+      with:
+        name: rendered-video
+        path: out.mp4
