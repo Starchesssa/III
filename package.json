@@ -17,6 +17,6 @@
   "devDependencies": {
     "@motion-canvas/vite-plugin": "3.17.2",
     "typescript": "5.9.2",
-    "vite": "7.1.5"
+    "vite": "5.10.2"
   }
 }
