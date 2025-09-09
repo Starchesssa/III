@@ -1,10 +1,9 @@
-
 {
   "name": "motion-canvas-project",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "render": "npx @motion-canvas/cli render src/project.ts --output public/video.mp4"
+    "render": "npx @motion-canvas/core render src/project.ts --output public/video.mp4"
   },
   "dependencies": {
     "@motion-canvas/2d": "^3.12.0",
