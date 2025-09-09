@@ -1,3 +1,4 @@
+
 name: Motion Canvas Headless Render
 
 on:
@@ -18,9 +19,9 @@ jobs:
         with:
           node-version: 20
 
-      # 3. Install dependencies
+      # 3. Install dependencies (use install instead of ci)
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # 4. Render Motion Canvas project headlessly
       - name: Render Motion Canvas
