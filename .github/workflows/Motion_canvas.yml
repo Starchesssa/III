@@ -1,3 +1,4 @@
+
 name: Headless Motion Canvas Render
 
 on:
@@ -20,9 +21,9 @@ jobs:
       with:
         node-version: '20'
 
-    # 3. Install dependencies
+    # 3. Install dependencies (handle peer deps)
     - name: Install dependencies
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     # 4. Run headless render
     - name: Render Motion Canvas Project
