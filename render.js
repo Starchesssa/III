@@ -1,6 +1,4 @@
 
-code
-JavaScript
 // render.js
 const { render } = require('@motion-canvas/node');
 const project = require('./src/project.ts');
