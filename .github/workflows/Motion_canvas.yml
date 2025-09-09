@@ -2,7 +2,7 @@
 name: Headless Motion Canvas Render
 
 on:
-  workflow_dispatch: # Run manually
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -25,9 +25,9 @@ jobs:
     - name: Install dependencies
       run: npm install --legacy-peer-deps
 
-    # 4. Run headless render
+    # 4. Run headless render via render.js
     - name: Render Motion Canvas Project
-      run: npm run render
+      run: node render.js
 
     # 5. Upload output video as artifact
     - name: Upload rendered video
