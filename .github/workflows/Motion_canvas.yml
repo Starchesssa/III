@@ -1,30 +1,34 @@
-
-name: Render Motion Canvas
+name: Motion Canvas Headless Render
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  render-video:
+  render:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      # 1. Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
-      - name: Install deps
+      # 3. Install dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Render Amazon video
-        run: npm run render
+      # 4. Run Motion Canvas CLI to render video
+      - name: Render Motion Canvas
+        run: npx motion-canvas render src/project.ts --output public/video.mp4
 
+      # 5. Upload rendered video as artifact (v4)
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
-          name: amazon-video
-          path: output/amazon.mp4
+          name: motion-canvas-video
+          path: public/video.mp4
