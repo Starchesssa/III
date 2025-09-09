@@ -1,19 +1,21 @@
 
 {
-  "name": "motion-canvas-project",
-  "version": "1.0.0",
+  "name": "amazon-failure-video",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "render": "motion-canvas render src/project.ts --output public/video.mp4",
-    "serve": "motion-canvas-player"
+    "serve": "vite",
+    "build": "vite build",
+    "render": "node render.js"
   },
   "dependencies": {
-    "@motion-canvas/2d": "^3.12.0",
-    "@motion-canvas/core": "^3.12.0",
-    "@motion-canvas/ffmpeg": "^3.17.2",
-    "@motion-canvas/cli": "^3.12.0"
+    "@motion-canvas/2d": "^1.2.0",
+    "@motion-canvas/core": "^1.2.0",
+    "@motion-canvas/node": "^1.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "@motion-canvas/vite-plugin": "^1.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   }
 }
