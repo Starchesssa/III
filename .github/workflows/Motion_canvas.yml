@@ -20,13 +20,13 @@ jobs:
 
       # 3. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      # 4. Run Motion Canvas CLI to render video
+      # 4. Render Motion Canvas project headlessly
       - name: Render Motion Canvas
-        run: npx motion-canvas render src/project.ts --output public/video.mp4
+        run: npm run render
 
-      # 5. Upload rendered video as artifact (v4)
+      # 5. Upload rendered video as artifact
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
