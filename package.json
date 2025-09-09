@@ -1,15 +1,18 @@
 
 {
-  "name": "motion-canvas-video",
+  "name": "motion-canvas-project",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "motion-canvas dev",
-    "render": "motion-canvas render src/amazon.tsx --output output/amazon.mp4"
+    "serve": "motion-canvas-player",
+    "render": "motion-canvas render src/project.ts --output output/video.mp4"
   },
   "dependencies": {
-    "@motion-canvas/core": "^3.17.2",
-    "@motion-canvas/2d": "^3.17.2",
-    "@motion-canvas/ui": "^3.17.2",
-    "@motion-canvas/ffmpeg": "^3.17.2"
+    "@motion-canvas/2d": "^4.1.0",
+    "@motion-canvas/core": "^4.1.0",
+    "@motion-canvas/ffmpeg": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
