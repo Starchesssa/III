@@ -8,8 +8,8 @@
     "render": "motion-canvas render src/project.ts --output output/video.mp4"
   },
   "dependencies": {
-    "@motion-canvas/2d": "^4.1.0",
-    "@motion-canvas/core": "^4.1.0",
+    "@motion-canvas/2d": "^3.12.0",
+    "@motion-canvas/core": "^3.12.0",
     "@motion-canvas/ffmpeg": "^1.2.0"
   },
   "devDependencies": {
