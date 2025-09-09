@@ -10,8 +10,7 @@
   },
   "dependencies": {
     "@motion-canvas/2d": "3.17.2",
-    "@motion-canvas/core": "3.17.2",
-    "@motion-canvas/node": "3.17.2"
+    "@motion-canvas/core": "3.17.2"
   },
   "devDependencies": {
     "@motion-canvas/vite-plugin": "3.17.2",
