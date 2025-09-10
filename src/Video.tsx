@@ -1,4 +1,4 @@
-TypeScript
+
 import { Composition } from 'remotion';
 import { MainScene } from './scenes/MainScene';
 import './style.css'; // We'll create this for fonts and basic styles
