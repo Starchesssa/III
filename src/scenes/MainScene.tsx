@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useGsap } from './use-gsap';
 
 // Assume you have an audio file in the public folder
-import audio from '../../public/audio.mp3';
+import audio from '../../public/audio.wav';
 // Assume you have logo assets in the public folder
 import amazonLogo from '../../public/amazon-logo.png';
 import alexaLogo from '../../public/alexa-logo.png';
