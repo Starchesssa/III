@@ -6,8 +6,8 @@ import { useGsap } from './use-gsap';
 // Assume you have an audio file in the public folder
 import audio from '../../public/audio.wav';
 // Assume you have logo assets in the public folder
-import amazonLogo from '../../public/amazon-logo.png';
-import alexaLogo from '../../public/alexa-logo.png';
+import amazonLogo from '../../public/amazon-logo.jpg';
+import alexaLogo from '../../public/alexa-logo.jpeg';
 
 
 const textStyle: React.CSSProperties = {
