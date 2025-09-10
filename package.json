@@ -1,0 +1,30 @@
+{
+  "name": "remotion-video-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion preview",
+    "build": "remotion build src/Video.tsx out/video.mp4 --codec=h264",
+    "render": "remotion render src/Video.tsx out/video.mp4 --codec=h264",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.341",
+    "@remotion/cli": "^4.0.341",
+    "gsap": "^3.12.5",
+    "react-icons": "^4.11.0",
+    "clsx": "^2.1.0", 
+    "zustand": "^4.5.2" 
+  },
+  "devDependencies": {
+    "typescript": "^5.1.0",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.0"
+  }
+}
