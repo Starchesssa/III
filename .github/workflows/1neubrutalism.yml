@@ -1,0 +1,30 @@
+name: NeoBrutal Remotion Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # ✅ write permission enabled
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Init & install deps (no manual package.json)
+        run: |
+          npm init -y
+          npm install remotion react react-dom neobrutal-ui
+
+      - name: Render single frame
+        run: |
+          npx remotion render src/index.tsx NeoBrutal out.png --frames=1
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: neobrutal-preview
+          path: out.png
