@@ -1,29 +1,48 @@
-import { AbsoluteFill } from "remotion";
-import { Button } from "neobrutal-ui";
+import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 
 export const Video = () => {
+  const frame = useCurrentFrame();
+
+  const scale = interpolate(frame, [0, 20], [0.8, 1], {
+    extrapolateRight: "clamp",
+  });
+
   return (
     <AbsoluteFill
       style={{
-        background: "#fff",
+        background: "#ffffff",
         justifyContent: "center",
         alignItems: "center",
-        fontFamily: "sans-serif",
+        fontFamily: "Arial, sans-serif",
       }}
     >
       <div
         style={{
-          border: "5px solid black",
-          padding: 40,
-          boxShadow: "8px 8px 0 black",
+          transform: `scale(${scale})`,
+          border: "6px solid black",
+          padding: 50,
+          boxShadow: "12px 12px 0 black",
           background: "#f4f4f4",
+          textAlign: "center",
         }}
       >
-        <h1 style={{ fontSize: 48, marginBottom: 30 }}>
-          Neo-Brutal UI
+        <h1 style={{ fontSize: 52, fontWeight: 900 }}>
+          NEO-BRUTAL VIDEO
         </h1>
 
-        <Button>CLICK ME</Button>
+        <div
+          style={{
+            marginTop: 30,
+            padding: "14px 30px",
+            border: "4px solid black",
+            boxShadow: "6px 6px 0 black",
+            fontSize: 22,
+            fontWeight: 700,
+            display: "inline-block",
+          }}
+        >
+          CLICK ENERGY
+        </div>
       </div>
     </AbsoluteFill>
   );
