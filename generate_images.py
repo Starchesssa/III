@@ -1,34 +1,30 @@
-import os
-import json
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
-# List of prompts to generate (3 prompts)
-prompts = [
+PROMPTS = [
     "A scenic sunrise over Kilimanjaro, vibrant and cinematic",
     "Futuristic city skyline at dusk, glowing neon lights",
     "A serene tropical beach, crystal clear water and palm trees"
 ]
 
-# Output directory
-out_dir = Path("outputs")
-out_dir.mkdir(exist_ok=True)
+OUTPUT_DIR = Path("outputs")
+OUTPUT_DIR.mkdir(exist_ok=True)
 
-def generate(prompt, index):
-    # Construct the CLI command
-    # This uses the built-in FastSD CPU CLI via app.py
+for i, prompt in enumerate(PROMPTS, 1):
+    print(f"\n🖼️ Generating image {i}")
+    print(f"📝 Prompt: {prompt}")
+
     cmd = [
-        "python", "src/app.py",
+        "python",
+        "app.py",
         "--prompt", prompt,
-        "--outdir", str(out_dir),
-        "--n_images", "1", 
-        "--steps", "4"
+        "--number_of_images", "1",
+        "--inference_steps", "4",
+        "--image_width", "512",
+        "--image_height", "512",
+        "--use_openvino"
     ]
-    print(f"Generating image {index+1} for prompt: {prompt}")
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    print(result.stdout)
-    print(result.stderr)
 
-if __name__ == "__main__":
-    for i, p in enumerate(prompts):
-        generate(p, i)
+    subprocess.run(cmd, check=True)
+
+print("\n✅ All images generated")
